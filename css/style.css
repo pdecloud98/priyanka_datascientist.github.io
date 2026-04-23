@@ -8,19 +8,15 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    
-    padding: 15px 20px;
-    max-width: 1100px;
-    margin: auto;
+    padding: 20px 60px;
     background: white;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 18px; /* slightly tighter */
+    gap: 20px;
 }
-
 .logo {
     color: #4f46e5;
 }
@@ -29,11 +25,8 @@ nav ul {
 .hero {
     display: flex;
     justify-content: space-between;
-    
-    gap: 40px;              /* ADD THIS */
-    padding: 60px 20px;     /* REDUCE SPACE */
-    max-width: 1100px;      /* ADD THIS */
-    margin: auto;           /* CENTER IT */
+    align-items: center;
+    padding: 80px;
 }
 
 /* Left */
@@ -228,7 +221,7 @@ nav ul li:hover::after {
 
 
 .hero-left {
-    max-width: 520px;
+    max-width: 600px;
     font-family: 'Poppins', sans-serif;
 }
 
