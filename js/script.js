@@ -67,30 +67,68 @@ function animateParticles() {
 }
 
 animateParticles();
-const roles = ["ML Engineer", "Data Scientist", "Data Analyst"];
-let i = 0, j = 0, current = "", deleting = false;
+// const roles = ["ML Engineer", "Data Scientist", "Data Analyst"];
+// let i = 0, j = 0, current = "", deleting = false;
+
+// function typeEffect() {
+//     current = roles[i];
+
+//     if (!deleting) {
+//         document.getElementById("typing").innerText = current.substring(0, j++);
+//     } else {
+//         document.getElementById("typing").innerText = current.substring(0, j--);
+//     }
+
+//     if (!deleting && j === current.length) {
+//         deleting = true;
+//         setTimeout(typeEffect, 1500);
+//         return;
+//     }
+
+//     if (deleting && j === 0) {
+//         deleting = false;
+//         i = (i + 1) % roles.length;
+//     }
+
+//     setTimeout(typeEffect, deleting ? 60 : 120);
+// }
+
+// typeEffect();
+const roles = [
+  "Full Stack Data Analyst",
+  "ML Engineer",
+  "Data Scientist",
+  "Business Analyst"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typedText = document.getElementById("typed-role");
 
 function typeEffect() {
-    current = roles[i];
 
-    if (!deleting) {
-        document.getElementById("typing").innerText = current.substring(0, j++);
-    } else {
-        document.getElementById("typing").innerText = current.substring(0, j--);
+  const currentRole = roles[roleIndex];
+
+  if (!deleting) {
+    typedText.textContent = currentRole.substring(0, charIndex++);
+    
+    if (charIndex > currentRole.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
     }
-
-    if (!deleting && j === current.length) {
-        deleting = true;
-        setTimeout(typeEffect, 1500);
-        return;
+  } else {
+    typedText.textContent = currentRole.substring(0, charIndex--);
+    
+    if (charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
     }
+  }
 
-    if (deleting && j === 0) {
-        deleting = false;
-        i = (i + 1) % roles.length;
-    }
-
-    setTimeout(typeEffect, deleting ? 60 : 120);
+  setTimeout(typeEffect, deleting ? 40 : 80);
 }
 
 typeEffect();
