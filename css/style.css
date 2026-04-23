@@ -22,7 +22,7 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 22px;
+    gap: 30px;
 }
 
 .logo {
