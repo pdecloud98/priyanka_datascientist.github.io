@@ -192,3 +192,52 @@ nav ul li:hover::after {
     color: #4f46e5;
     font-weight: bold;
 }
+
+
+
+.hero-left {
+    max-width: 600px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hello text */
+.hero-left h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Name Gradient */
+.name {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #a855f7, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Typing line */
+.hero-left h3 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* Highlight text */
+.highlight {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+/* Description */
+.desc {
+    margin-top: 15px;
+    line-height: 1.7;
+    color: #d1d5db;
+}
+
+/* Skills line */
+.skills {
+    margin-top: 15px;
+    color: #22d3ee;
+    font-weight: 600;
+}
