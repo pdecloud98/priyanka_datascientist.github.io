@@ -27,6 +27,7 @@ nav ul {
 
 .logo {
     color: #4f46e5;
+    font-weight: bold;
     margin-right: 30px; /* bring menu closer */
 }
 
