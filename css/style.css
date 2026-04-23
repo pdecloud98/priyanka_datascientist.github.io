@@ -8,7 +8,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 50px 60px;
+    padding: 15px 60px;
     background: white;
 }
 
@@ -87,7 +87,7 @@ nav ul {
     }
 
     .right img {
-        width: 100px;
+        width: 60px;
         margin-top: 30px;
     }
 
