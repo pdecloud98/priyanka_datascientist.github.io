@@ -2,9 +2,6 @@ body {
     margin: 0;
     font-family: Arial;
     background: #f5f7fb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Navbar */
