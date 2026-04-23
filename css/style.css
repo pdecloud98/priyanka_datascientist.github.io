@@ -1,3 +1,80 @@
 body {
-    background-color: lightblue;
+    margin: 0;
+    font-family: Arial;
+    background: #f5f7fb;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.logo {
+    color: #4f46e5;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+/* Left */
+.left h1 {
+    font-size: 40px;
+}
+
+.name {
+    color: #4f46e5;
+}
+
+.left p {
+    max-width: 400px;
+    color: gray;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.primary {
+    background: #4f46e5;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #4f46e5;
+    background: transparent;
+}
+
+.green {
+    background: #10b981;
+    color: white;
+}
+
+/* Right Image */
+.right img {
+    width: 280px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px rgba(79, 70, 229, 0.5);
 }
