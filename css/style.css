@@ -8,7 +8,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    
     padding: 15px 20px;
     max-width: 1100px;
     margin: auto;
@@ -29,7 +29,7 @@ nav ul {
 .hero {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    
     gap: 40px;              /* ADD THIS */
     padding: 60px 20px;     /* REDUCE SPACE */
     max-width: 1100px;      /* ADD THIS */
@@ -272,10 +272,4 @@ nav ul li:hover::after {
     margin-top: 15px;
     color: #22d3ee;
     font-weight: 600;
-}
-h1, h2, h3, p {
-    margin: 5px 0;
-}
-.left, .right {
-    flex: 1;
 }
