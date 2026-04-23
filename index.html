@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Priyank Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
+<canvas id="particles"></canvas>
 <!-- Navbar -->
 <nav>
     <h2 class="logo">DataFolio</h2>
@@ -26,7 +28,7 @@
     <div class="left">
         <h1>Hello, I'm</h1>
         <h2 class="name">Priyank</h2>
-        <h3>I am a <span id="typing"></span></h3>
+        <h3>I am a <span class="highlight" id="typing"></span></h3>
 
         <p>
             Transforming complex data into actionable insights 
@@ -38,6 +40,11 @@
             <button class="btn secondary">Contact Me</button>
             <button class="btn green">Download CV</button>
         </div>
+        <div class="socials">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
     </div>
 
     <div class="right">
@@ -45,6 +52,7 @@
     </div>
 
 </section>
+    <div class="scroll-down"></div>
 
 <script src="js/script.js"></script>
 </body>
