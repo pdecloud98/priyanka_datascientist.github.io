@@ -67,3 +67,30 @@ function animateParticles() {
 }
 
 animateParticles();
+const roles = ["ML Engineer", "Data Scientist", "Data Analyst"];
+let i = 0, j = 0, current = "", deleting = false;
+
+function typeEffect() {
+    current = roles[i];
+
+    if (!deleting) {
+        document.getElementById("typing").innerText = current.substring(0, j++);
+    } else {
+        document.getElementById("typing").innerText = current.substring(0, j--);
+    }
+
+    if (!deleting && j === current.length) {
+        deleting = true;
+        setTimeout(typeEffect, 1500);
+        return;
+    }
+
+    if (deleting && j === 0) {
+        deleting = false;
+        i = (i + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, deleting ? 60 : 120);
+}
+
+typeEffect();
