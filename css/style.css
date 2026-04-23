@@ -2,20 +2,26 @@ body {
     margin: 0;
     font-family: Arial;
     background: #f5f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 60px;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1100px;
+    margin: auto;
     background: white;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 18px; /* slightly tighter */
 }
 
 .logo {
@@ -27,7 +33,10 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 80px;
+    gap: 40px;              /* ADD THIS */
+    padding: 60px 20px;     /* REDUCE SPACE */
+    max-width: 1100px;      /* ADD THIS */
+    margin: auto;           /* CENTER IT */
 }
 
 /* Left */
@@ -222,7 +231,7 @@ nav ul li:hover::after {
 
 
 .hero-left {
-    max-width: 600px;
+    max-width: 520px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -266,4 +275,10 @@ nav ul li:hover::after {
     margin-top: 15px;
     color: #22d3ee;
     font-weight: 600;
+}
+h1, h2, h3, p {
+    margin: 5px 0;
+}
+.left, .right {
+    flex: 1;
 }
