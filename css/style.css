@@ -119,30 +119,56 @@ nav ul {
     background: #4f46e5;
     color: white;
 }
-.scroll-down {
-    width: 25px;
-    height: 40px;
-    border: 2px solid gray;
-    border-radius: 20px;
-    margin: 30px auto;
-    position: relative;
-}
-
-.scroll-down::after {
-    content: "";
-    width: 5px;
-    height: 8px;
-    background: gray;
+/* Scroll Button */
+.scroll-btn {
     position: absolute;
-    top: 10px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    animation: scroll 1.5s infinite;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #9ca3af;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-@keyframes scroll {
-    0% { top: 10px; opacity: 1; }
-    100% { top: 20px; opacity: 0; }
+/* Arrow */
+.arrow {
+    font-size: 20px;
+    color: #9ca3af;
+    animation: bounce 1.5s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* Hover Effect (Premium Touch) */
+.scroll-btn:hover {
+    border-color: #4f46e5;
+}
+
+.scroll-btn:hover .arrow {
+    color: #4f46e5;
+}
+html {
+    scroll-behavior: smooth;
+}
+.scroll-btn {
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.scroll-btn:hover {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.7);
 }
 #particles {
     position: fixed;
