@@ -272,7 +272,7 @@ nav ul li:hover::after {
 .hero-left h1 {
     font-size: 48px;
     font-weight: 700;
-    margin: 0 0 4px;
+    margin: 0 0 7px;
 }
 
 /* Name Gradient */
@@ -282,7 +282,7 @@ nav ul li:hover::after {
     background: linear-gradient(90deg, #a855f7, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 0 4px;
+    margin: 0 0 7px;
 }
 
 /* Typing line */
