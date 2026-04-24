@@ -76,3 +76,17 @@ function typeEffect() {
 }
 
 window.onload = typeEffect;
+
+
+
+const toggle = document.getElementById("menu-toggle");
+const navMenu = document.querySelector("nav ul");
+
+toggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+document.querySelectorAll("nav ul li").forEach(item => {
+    item.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
