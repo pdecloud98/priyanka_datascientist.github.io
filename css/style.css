@@ -485,6 +485,10 @@ html {
 .orange span { background: #ffedd5; color: #ea580c; }
 .green span { background: #dcfce7; color: #15803d; }
 .pink span { background: #fce7f3; color: #be185d; }
+.cloud-tags span {
+    background: #d1fae5;
+    color: #065f46;
+}
 
 /* HOVER */
 .tags span:hover {
