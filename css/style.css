@@ -115,10 +115,11 @@ nav ul {
 .right img {
     width: 280px;
     border-radius: 50%;
-    box-shadow: 
-        0 8px 20px rgba(0, 0, 0, 0.06),
-        0 0 10px rgba(56, 189, 248, 0.12);
-    transition: 0.3s;
+    box-shadow:
+        0 0 20px rgba(56, 189, 248, 0.25),
+        0 0 40px rgba(56, 189, 248, 0.2),
+        0 0 70px rgba(56, 189, 248, 0.15),
+        0 0 100px rgba(56, 189, 248, 0.1);
 }
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -301,7 +302,7 @@ nav ul li:hover::after {
 .desc {
     margin-top: 15px;
     line-height: 1.7;
-    color: #d1d5db;
+    color: #000;
 }
 
 /* Skills line */
