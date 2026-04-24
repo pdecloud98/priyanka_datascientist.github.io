@@ -115,9 +115,9 @@ nav ul {
 .right img {
     width: 280px;
     border-radius: 50%;
-     box-shadow: 
-        0 10px 25px rgba(0, 0, 0, 0.1),
-        0 0 15px rgba(79, 70, 229, 0.2);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.06),
+        0 0 10px rgba(56, 189, 248, 0.12);
 }
 /* RESPONSIVE */
 @media (max-width: 768px) {
