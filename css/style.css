@@ -44,7 +44,16 @@ nav ul {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
+  color: #0A66C2; /* LinkedIn-style professional blue */
 }
+.portfolio {
+  color: #4A90E2;   /* lighter blue */
+  font-weight: 600;
+}
+.dash {
+  color: #999;
+}
+
 .logos {
   display: flex;
   flex-direction: column;
