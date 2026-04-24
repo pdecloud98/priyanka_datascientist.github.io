@@ -327,3 +327,39 @@ html {
 .scroll-btn:hover {
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.7);
 }
+
+
+
+
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+
+    nav {
+        justify-content: space-between;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
