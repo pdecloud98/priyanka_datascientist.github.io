@@ -397,3 +397,31 @@ html {
         display: block;
     }
 }
+
+/* responsive page  */
+@media (max-width: 768px) {
+    .scroll-btn {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .right img {
+        width: 180px;   /* bigger */
+        margin: 20px auto;
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .right {
+        order: -1;   /* THIS moves image to top */
+    }
+}
+@media (max-width: 768px) {
+    .hero-left {
+        text-align: center;
+    }
+}
