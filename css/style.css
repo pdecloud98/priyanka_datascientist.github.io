@@ -426,3 +426,75 @@ html {
         text-align: center;
     }
 }
+
+
+/* my tech stack section */
+/* Section */
+.tech-stack {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f9fafb;  /* light clean background */
+}
+
+/* Title */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.section-subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+/* Container */
+.stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Individual Tech Box */
+.stack-box {
+    padding: 10px 18px;
+    background: white;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.stack-box:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+    }
+
+    .stack-box {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+}
+
+
+
+
+
+
+
