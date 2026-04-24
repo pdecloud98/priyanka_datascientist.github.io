@@ -219,7 +219,7 @@ html {
     top: 0;
     left: 0;
 }
-.right img {
+/* .right img {
     width: 280px;
     border-radius: 50%;
     box-shadow: 
@@ -227,7 +227,7 @@ html {
         0 0 40px #4f46e5,
         0 0 60px #4f46e5;
     transition: 0.3s;
-}
+} */
 
 .right img:hover {
     transform: scale(1.05);
