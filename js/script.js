@@ -90,3 +90,46 @@ document.querySelectorAll("nav ul li").forEach(item => {
         navMenu.classList.remove("active");
     });
 });
+
+
+// details botton
+function openModal(title, image, desc, techArray, github, presentation) {
+
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-image").src = image;
+    document.getElementById("modal-desc").innerText = desc;
+
+    let techContainer = document.getElementById("modal-tech");
+    techContainer.innerHTML = "";
+
+    techArray.forEach(t => {
+        let span = document.createElement("span");
+        span.innerText = t;
+        techContainer.appendChild(span);
+    });
+
+    document.getElementById("modal-github").href = github;
+    document.getElementById("modal-presentation").href = presentation;
+
+    document.getElementById("projectModal").style.display = "flex";
+}
+
+/* CLOSE FUNCTION */
+function closeModal() {
+    document.getElementById("projectModal").style.display = "none";
+}
+
+/* CLICK OUTSIDE TO CLOSE */
+window.onclick = function(e) {
+    let modal = document.getElementById("projectModal");
+    if (e.target === modal) {
+        closeModal();
+    }
+}
+
+/* ESC KEY CLOSE */
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeModal();
+    }
+});
