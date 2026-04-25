@@ -1139,6 +1139,11 @@ html {
 
 
 /* <project grid for project page > */
-.section1 {
-  margin-bottom: 30px; /* space below first div */
+.mb-20 {
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .mb-20 {
+        margin-bottom: 15px;
+    }
 }
