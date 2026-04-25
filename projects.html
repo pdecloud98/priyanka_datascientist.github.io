@@ -15,7 +15,7 @@
      <div class="logos">
         <h2 class="names">
           <!-- Priyanka De <span class="dash">–</span>  -->
-            <span class="portfolio">Portfolio</span>
+            <span class="portfolio">Priyanka De</span>
         </h2>
         <p class="roles">
           <b>Data Analyst • Business Analyst • Power BI Developer</b>
@@ -24,7 +24,7 @@
       <div class="menu-toggle" id="menu-toggle">☰</div>
   
       <ul>
-        <li><b>Home</b></li>
+        <li><a href="projects.html"><b>Home</b></a></li>
         <li><a href="projects.html"><b>Projects</b></a></li>
         <li><a href="resume.html"><b>Resume</b></a></li>
         <li><a href="about.html"><b>About</b></a></li>
@@ -35,10 +35,7 @@
   </nav>
   
   <!-- HERO HEADER (Different from Home) -->
-  <section class="projects-hero">
-    <h1>My Projects</h1>
-    <p>Showcasing real-world data analytics, dashboards, and ML projects</p>
-  </section>
+
   <!-- my projects section -->
 <section class="projects">
     <h2 style="text-align: center; margin-bottom: 5px;">
@@ -46,8 +43,41 @@
     </h2>
     
     <p style="text-align: center; color: #6b7280; margin-top: 0; margin-bottom: 40px;">
-      Explore some of my recent work in Data Analytics, Machine Learning, and visualization in Varoius Setor
+      Browse through my projects showcasing expertise in data analysis, machine learning, and visualization solutions for real-world problems.Explore some of my recent work in Data Analytics, Machine Learning, and visualization in Varoius Setor
     </p>
+<section class="filter-section">
+
+  <!-- INDUSTRY BUTTONS -->
+  <div class="filter-row industry">
+    <button>FMCG</button>
+    <button>E-commerce</button>
+    <button>Real Estate</button>
+    <button>Healthcare</button>
+    <button>Travel & Hospitality</button>
+    <button>Media</button>
+    <button>Telecom</button>
+    <button>BFSI</button>
+    <button>EdTech</button>
+  </div>
+
+  <!-- SKILL BUTTONS -->
+  <div class="filter-row skills">
+    <button>Python</button>
+    <button>SQL</button>
+    <button>Statistics</button>
+    <button>Advanced Excel</button>
+    <button>Power BI</button>
+    <button>Tableau</button>
+    <button>Machine Learning</button>
+    <button>Deep Learning</button>
+    <button>Cloud</button>
+    <button>AWS</button>
+    <button>Azure</button>
+    <button>Git</button>
+    <button>Linux</button>
+  </div>
+
+</section>
 
   <div class="project-grid">
 
@@ -177,11 +207,144 @@
     </div>
       <!-- ---CARD-4--- -->
   </div>
-    <div class="see-all-container">
+    <!-- <div class="see-all-container">
         <a href="projects.html" class="see-all-btn">
             See All Projects
         </a>
+    </div> -->
+
+    <!-- 2ND ROW -->
+  <div class="project-grid">
+
+    <!-- CARD 1 -->
+    <div class="project-card">
+
+      <!-- <img src="images/Project 1.png" alt="Project"> -->
+        <div class="project-image">
+          <img src="images/project4.png" alt="">
+        </div>
+
+      <div class="project-content">
+        <h3>PayPal Product Dissection</h3>
+
+        <p>
+          Built a scalable SQL schema and ER model for PayPal with core entities like Users, Transactions, and Disputes.
+        </p>
+
+        <div class="tagsS">
+          <span>SQL</span>
+          <span>MySQL</span>
+          <span>Python</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+          <a href="javascript:void(0)" 
+               class="btn-primary"
+               onclick="openModal(
+                 'PayPal Product Dissection',
+                 'images/project4.png',
+                 'This Power BI dashboard analyzes workforce diversity, promotion trends, and turnover rates across departments, job levels, and gender groups. By visualizing key HR metrics, it enables leadership to uncover inclusion gaps, monitor progress, and make data-driven decisions. The dashboard supported strategic planning by identifying underrepresented groups and highlighting disparities in advancement and retention.',
+                 ['SQL','MySQL','Python','Power BI','AWS'],
+                 'https://github.com/yourlink',
+                 'https://your-presentation-link'
+               )">
+               Details
+          </a>
+          <a href="#" class="btn-presentation">Presentation</a>
+        </div>
+
+      </div>
     </div>
+
+    <!-- CARD 2 -->
+    <div class="project-card">
+
+      <!-- <img src="images/Project2.png" alt="Project"> -->
+        <div class="project-image">
+          <img src="images/project5.png" alt="">
+        </div>
+
+      <div class="project-content">
+        <h3>Finance Dashboard</h3>
+
+        <p>
+          Designed a dashboard to track income, expenses, and savings using Excel and visualization tools.
+        </p>
+
+        <div class="tagsS">
+          <span>Excel</span>
+          <span>Power BI</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <a href="javascript:void(0)" 
+               class="btn-primary"
+               onclick="openModal(
+                 'PayPal Product Dissection',
+                 'images/project5.png',
+                 'This Power BI dashboard analyzes workforce diversity, promotion trends, and turnover rates across departments, job levels, and gender groups. By visualizing key HR metrics, it enables leadership to uncover inclusion gaps, monitor progress, and make data-driven decisions. The dashboard supported strategic planning by identifying underrepresented groups and highlighting disparities in advancement and retention.',
+                 ['SQL','MySQL','Python','Power BI','AWS'],
+                 'https://github.com/yourlink',
+                 'https://your-presentation-link'
+               )">
+               Details
+          </a>
+          <a href="#" class="btn-presentation">Presentation</a>
+        </div>
+
+      </div>
+    </div>
+      <!-- ---Card-3---- -->
+    <div class="project-card">
+
+          <img src="images/project6.png" alt="HR Dashboard">
+
+      <div class="project-content">
+        <h3>HR Diversity & Inclusion Dashboard</h3>
+
+        <p>
+          Built a Power BI dashboard to analyze diversity, promotions, and employee turnover across departments.
+        </p>
+
+        <div class="tagsS">
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>Data Modeling</span>
+          <span>Storytelling</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="#" class="btn-outline">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+
+            <a href="javascript:void(0)" 
+               class="btn-primary"
+               onclick="openModal(
+                 'PayPal Product Dissection',
+                 'images/project6.png',
+                 'This Power BI dashboard analyzes workforce diversity, promotion trends, and turnover rates across departments, job levels, and gender groups. By visualizing key HR metrics, it enables leadership to uncover inclusion gaps, monitor progress, and make data-driven decisions. The dashboard supported strategic planning by identifying underrepresented groups and highlighting disparities in advancement and retention.',
+                 ['SQL','MySQL','Python','Power BI','AWS'],
+                 'https://github.com/yourlink',
+                 'https://your-presentation-link'
+               )">
+               Details
+          </a>
+
+          <a href="#" class="btn-presentation">
+            Presentation
+          </a>
+        </div>
+
+      </div>
+    </div>
+      <!-- ---CARD-4--- -->
+  </div>
+
+
+    
 </section>
 <!-- footer -->
 <footer class="footer">
