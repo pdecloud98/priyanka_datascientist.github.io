@@ -1139,23 +1139,6 @@ html {
 
 
 /* <project grid for project page > */
-.projecting-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 40px;
-    column-gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-@media (max-width: 1024px) {
-    .projecting-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .projecting-grid {
-        grid-template-columns: 1fr;
-    }
+.section1 {
+  margin-bottom: 30px; /* space below first div */
 }
