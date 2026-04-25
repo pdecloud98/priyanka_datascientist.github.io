@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | Priyanka De</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAVBAR (same as home) -->
+<nav>
+  <div class="nav-container">
+    <div class="logos">
+      <h2 class="portfolio">Portfolio</h2>
+      <p class="roles"><b>Data Analyst • Business Analyst • Power BI Developer</b></p>
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html"><b>Projects</b></a></li>
+      <li><a href="#">Resume</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO HEADER (Different from Home) -->
+<section class="projects-hero">
+  <h1>My Projects</h1>
+  <p>Showcasing real-world data analytics, dashboards, and ML projects</p>
+</section>
+
+<!-- PROJECT GRID -->
+<section class="projects">
+
+  <div class="project-grid">
+
+    <!-- CARD 1 -->
+    <div class="project-card">
+      <img src="images/project1.png">
+
+      <div class="project-content">
+        <h3>PayPal Product Dissection</h3>
+        <p>Designed scalable SQL schema & ER model.</p>
+
+        <div class="tags">
+          <span>SQL</span>
+          <span>MySQL</span>
+          <span>Python</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+
+          <button class="btn-primary"
+          onclick="openModal(
+            'PayPal Product Dissection',
+            'images/project1.png',
+            'Built scalable SQL schema and ER model.',
+            ['SQL','MySQL','Python'],
+            '#',
+            '#'
+          )">
+          Details
+          </button>
+
+          <a href="#" class="btn-presentation">Presentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="project-card">
+      <img src="images/project2.png">
+
+      <div class="project-content">
+        <h3>Finance Dashboard</h3>
+        <p>Tracked income, expenses, savings.</p>
+
+        <div class="tags">
+          <span>Excel</span>
+          <span>Power BI</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+
+          <button class="btn-primary"
+          onclick="openModal(
+            'Finance Dashboard',
+            'images/project2.png',
+            'Dashboard for financial tracking.',
+            ['Excel','Power BI'],
+            '#',
+            '#'
+          )">
+          Details
+          </button>
+
+          <a href="#" class="btn-presentation">Presentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="project-card">
+      <img src="images/project3.png">
+
+      <div class="project-content">
+        <h3>HR Diversity Dashboard</h3>
+        <p>Analyzed workforce diversity trends.</p>
+
+        <div class="tags">
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>Storytelling</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+
+          <button class="btn-primary"
+          onclick="openModal(
+            'HR Diversity Dashboard',
+            'images/project3.png',
+            'Analyzes diversity and inclusion metrics.',
+            ['Power BI','DAX'],
+            '#',
+            '#'
+          )">
+          Details
+          </button>
+
+          <a href="#" class="btn-presentation">Presentation</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
