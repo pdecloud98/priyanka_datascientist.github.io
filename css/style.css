@@ -512,3 +512,128 @@ html {
         text-align: center;
     }
 }
+
+
+
+
+
+/* project section */
+.projects {
+    padding: 80px 20px;
+    background: #f5f7fb;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CARD */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+/* IMAGE */
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tags span {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* BUTTONS */
+.project-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* GitHub */
+.btn-outline {
+    border: 1px solid #d1d5db;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Details */
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* Presentation */
+.btn-presentation {
+    background: #10b981;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* HOVER */
+.btn-outline:hover { background: #f3f4f6; }
+.btn-primary:hover { background: #4338ca; }
+.btn-presentation:hover { background: #059669; }
+
+@media (max-width: 992px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
