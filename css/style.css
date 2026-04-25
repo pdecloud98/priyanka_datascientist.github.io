@@ -715,7 +715,7 @@ html {
 .focus {
     padding: 80px 20px;
     text-align: center;
-    background: #f5f7fb;
+    background: #f1f5f9; /* softer than white */
 }
 
 .section-title {
@@ -728,12 +728,12 @@ html {
     margin-bottom: 50px;
 }
 
-/* GRID */
+/* 8 IN ONE ROW */
 .focus-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 900px;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -742,61 +742,55 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
-/* ROUND ICON */
+/* BASE CIRCLE */
 .circle {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: white;
-    border: 2px solid #e5e7eb;
-
-    font-size: 26px;
-    color: #4f46e5;
+    font-size: 22px;
 
     transition: 0.3s ease;
-
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.05);
 }
+
+/* 🎨 SOFT COLOR VARIATIONS */
+.c1 { background: #dbeafe; color: #1e40af; }
+.c2 { background: #fef3c7; color: #92400e; }
+.c3 { background: #e0e7ff; color: #3730a3; }
+.c4 { background: #dcfce7; color: #166534; }
+.c5 { background: #fce7f3; color: #9d174d; }
+.c6 { background: #ede9fe; color: #5b21b6; }
+.c7 { background: #cffafe; color: #155e75; }
+.c8 { background: #fee2e2; color: #991b1b; }
 
 /* TEXT */
 .focus-item p {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .circle:hover {
-    transform: translateY(-6px) scale(1.05);
+    transform: translateY(-5px) scale(1.05);
 
-    border-color: #4f46e5;
-
-    box-shadow:
-        0 20px 40px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
-/* RESPONSIVE */
-@media (max-width: 992px) {
+
+@media (max-width: 1100px) {
     .focus-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .focus-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .circle {
-        width: 65px;
-        height: 65px;
-        font-size: 22px;
     }
 }
