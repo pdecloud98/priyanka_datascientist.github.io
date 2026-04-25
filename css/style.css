@@ -672,5 +672,37 @@ html {
     }
 }
 
+/* see more project */
+/* Container */
+.see-all-container {
+    text-align: center;
+    margin-top: 40px;
+}
 
+/* Button */
+.see-all-btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 2px solid #4f46e5;
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+/* Hover */
+.see-all-btn:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+
+    .see-all-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+}
 
