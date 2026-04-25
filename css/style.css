@@ -234,7 +234,7 @@ html {
 .right img:hover {
     transform: scale(1.05);
 }
-nav ul li {
+/* nav ul li {
     cursor: pointer;
     position: relative;
 }
@@ -256,7 +256,45 @@ nav ul li::after {
 
 nav ul li:hover::after {
     width: 100%;
+} */
+
+
+/* RESET LINK STYLE */
+nav ul li a {
+    text-decoration: none;   /* remove underline */
+    color: black;            /* default black */
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
 }
+
+/* HOVER COLOR */
+nav ul li a:hover {
+    color: #4f46e5;
+}
+
+/* UNDERLINE ANIMATION */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #4f46e5;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+nav ul li a.active {
+    color: #4f46e5;
+}
+
+
+
+
 .highlight {
     color: #4f46e5;
     font-weight: bold;
