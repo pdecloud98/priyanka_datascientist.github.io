@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Projects | Priyanka De</title>
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Priyanka De-Portfolio | Full Stack Data Scientist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-
-<canvas id="particles"></canvas>
-
-<!-- NAVBAR (same as home) -->
-<nav>
-  <div class="nav-container">
-    <div class="logos">
-      <h2 class="portfolio">Priyanka De</h2>
-      <p class="roles"><b>Data Analyst • Business Analyst • Power BI Developer</b></p>
+  <canvas id="particles"></canvas>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+     <div class="logos">
+        <h2 class="names">
+          <!-- Priyanka De <span class="dash">–</span>  -->
+            <span class="portfolio">Portfolio</span>
+        </h2>
+        <p class="roles">
+          <b>Data Analyst • Business Analyst • Power BI Developer</b>
+        </p>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+  
+      <ul>
+        <li><b>Home</b></li>
+        <li><a href="projects.html"><b>Projects</b></a></li>
+        <li><a href="resume.html"><b>Resume</b></a></li>
+        <li><a href="about.html"><b>About</b></a></li>
+        <!-- <li><b>Blog</b></li> -->
+        <li><a href="contact.html"><b>Contact</b></a></li>
+      </ul>
     </div>
-
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html"><b>Projects</b></a></li>
-      <li><a href="#">Resume</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO HEADER (Different from Home) -->
-<section class="projects-hero">
-  <h1>My Projects</h1>
-  <p>Showcasing real-world data analytics, dashboards, and ML projects</p>
-</section>
-
-<!-- PROJECT GRID -->
+  </nav>
+  
+  <!-- HERO HEADER (Different from Home) -->
+  <section class="projects-hero">
+    <h1>My Projects</h1>
+    <p>Showcasing real-world data analytics, dashboards, and ML projects</p>
+  </section>
+  <!-- my projects section -->
 <section class="projects">
+    <h2 style="text-align: center; margin-bottom: 5px;">
+     Featured Projects
+    </h2>
+    
+    <p style="text-align: center; color: #6b7280; margin-top: 0; margin-bottom: 40px;">
+      Explore some of my recent work in Data Analytics, Machine Learning, and visualization in Varoius Setor
+    </p>
 
   <div class="project-grid">
 
     <!-- CARD 1 -->
     <div class="project-card">
-      <img src="images/project1.png">
+
+      <!-- <img src="images/Project 1.png" alt="Project"> -->
+        <div class="project-image">
+          <img src="images/Project 1.png" alt="">
+        </div>
 
       <div class="project-content">
         <h3>PayPal Product Dissection</h3>
-        <p>Designed scalable SQL schema & ER model.</p>
 
-        <div class="tags">
+        <p>
+          Built a scalable SQL schema and ER model for PayPal with core entities like Users, Transactions, and Disputes.
+        </p>
+
+        <div class="tagsS">
           <span>SQL</span>
           <span>MySQL</span>
           <span>Python</span>
@@ -60,95 +74,212 @@
 
         <div class="project-buttons">
           <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
-
-          <button class="btn-primary"
-          onclick="openModal(
-            'PayPal Product Dissection',
-            'images/project1.png',
-            'Built scalable SQL schema and ER model.',
-            ['SQL','MySQL','Python'],
-            '#',
-            '#'
-          )">
-          Details
-          </button>
-
+          <a href="javascript:void(0)" 
+               class="btn-primary"
+               onclick="openModal(
+                 'PayPal Product Dissection',
+                 'images/Project 1.png',
+                 'This Power BI dashboard analyzes workforce diversity, promotion trends, and turnover rates across departments, job levels, and gender groups. By visualizing key HR metrics, it enables leadership to uncover inclusion gaps, monitor progress, and make data-driven decisions. The dashboard supported strategic planning by identifying underrepresented groups and highlighting disparities in advancement and retention.',
+                 ['SQL','MySQL','Python','Power BI','AWS'],
+                 'https://github.com/yourlink',
+                 'https://your-presentation-link'
+               )">
+               Details
+          </a>
           <a href="#" class="btn-presentation">Presentation</a>
         </div>
+
       </div>
     </div>
 
     <!-- CARD 2 -->
     <div class="project-card">
-      <img src="images/project2.png">
+
+      <!-- <img src="images/Project2.png" alt="Project"> -->
+        <div class="project-image">
+          <img src="images/Project2.png" alt="">
+        </div>
 
       <div class="project-content">
         <h3>Finance Dashboard</h3>
-        <p>Tracked income, expenses, savings.</p>
 
-        <div class="tags">
+        <p>
+          Designed a dashboard to track income, expenses, and savings using Excel and visualization tools.
+        </p>
+
+        <div class="tagsS">
           <span>Excel</span>
           <span>Power BI</span>
         </div>
 
         <div class="project-buttons">
           <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
-
-          <button class="btn-primary"
-          onclick="openModal(
-            'Finance Dashboard',
-            'images/project2.png',
-            'Dashboard for financial tracking.',
-            ['Excel','Power BI'],
-            '#',
-            '#'
-          )">
-          Details
-          </button>
-
+            <a href="javascript:void(0)" 
+               class="btn-primary"
+               onclick="openModal(
+                 'PayPal Product Dissection',
+                 'images/Project2.png',
+                 'This Power BI dashboard analyzes workforce diversity, promotion trends, and turnover rates across departments, job levels, and gender groups. By visualizing key HR metrics, it enables leadership to uncover inclusion gaps, monitor progress, and make data-driven decisions. The dashboard supported strategic planning by identifying underrepresented groups and highlighting disparities in advancement and retention.',
+                 ['SQL','MySQL','Python','Power BI','AWS'],
+                 'https://github.com/yourlink',
+                 'https://your-presentation-link'
+               )">
+               Details
+          </a>
           <a href="#" class="btn-presentation">Presentation</a>
         </div>
+
       </div>
     </div>
-
-    <!-- CARD 3 -->
+      <!-- ---Card-3---- -->
     <div class="project-card">
-      <img src="images/project3.png">
+
+          <img src="images/project3.png" alt="HR Dashboard">
 
       <div class="project-content">
-        <h3>HR Diversity Dashboard</h3>
-        <p>Analyzed workforce diversity trends.</p>
+        <h3>HR Diversity & Inclusion Dashboard</h3>
 
-        <div class="tags">
+        <p>
+          Built a Power BI dashboard to analyze diversity, promotions, and employee turnover across departments.
+        </p>
+
+        <div class="tagsS">
           <span>Power BI</span>
           <span>DAX</span>
+          <span>Data Modeling</span>
           <span>Storytelling</span>
         </div>
 
         <div class="project-buttons">
-          <a href="#" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
+          <a href="#" class="btn-outline">
+            <i class="fab fa-github"></i> GitHub
+          </a>
 
-          <button class="btn-primary"
-          onclick="openModal(
-            'HR Diversity Dashboard',
-            'images/project3.png',
-            'Analyzes diversity and inclusion metrics.',
-            ['Power BI','DAX'],
-            '#',
-            '#'
-          )">
-          Details
-          </button>
+            <a href="javascript:void(0)" 
+               class="btn-primary"
+               onclick="openModal(
+                 'PayPal Product Dissection',
+                 'images/project3.png',
+                 'This Power BI dashboard analyzes workforce diversity, promotion trends, and turnover rates across departments, job levels, and gender groups. By visualizing key HR metrics, it enables leadership to uncover inclusion gaps, monitor progress, and make data-driven decisions. The dashboard supported strategic planning by identifying underrepresented groups and highlighting disparities in advancement and retention.',
+                 ['SQL','MySQL','Python','Power BI','AWS'],
+                 'https://github.com/yourlink',
+                 'https://your-presentation-link'
+               )">
+               Details
+          </a>
 
-          <a href="#" class="btn-presentation">Presentation</a>
+          <a href="#" class="btn-presentation">
+            Presentation
+          </a>
         </div>
+
+      </div>
+    </div>
+      <!-- ---CARD-4--- -->
+  </div>
+    <div class="see-all-container">
+        <a href="projects.html" class="see-all-btn">
+            See All Projects
+        </a>
+    </div>
+</section>
+<!-- footer -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-col">
+      <h2 class="logo">DataFolio</h2>
+      <p>
+        Showcasing data expertise and projects in analytics,
+        data science, and machine learning.
+      </p>
+    </div>
+
+    <!-- MIDDLE (TWO-COLUMN QUICK LINKS) -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+
+      <div class="quick-grid">
+        <!-- Column 1 -->
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+
+        <!-- Column 2 -->
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+          <!-- EMAIL (opens Gmail in browser) -->
+          <li>
+            <a href="https://mail.google.com/mail/?view=cm&to=pdecloud98@gmail.com,dataexplorepriyanka@gmail.com&su=Portfolio%20Inquiry&body=Hi%20Priyanka,"
+               target="_blank">
+              Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-col">
+      <h3>Connect With Me</h3>
+
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+        <!-- Gmail (browser compose) -->
+      <a href="mailto:pdecloud98@gmail.com,dataexplorepriyanka@gmail.com"><i class="fas fa-envelope"></i></a>
+
+        <!-- Phone -->
+        <a href="tel:+917063257272"><i class="fas fa-phone"></i></a>
+
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://discord.gg/your-invite-link" target="_blank"><i class="fab fa-discord"></i></a>
       </div>
     </div>
 
   </div>
 
-</section>
+  <div class="footer-bottom">
+    <p>© 2026 DataFolio. All rights reserved.</p>
+  </div>
 
+</footer>
+<!-- details section button connect -->
+    <!-- PROJECT MODAL -->
+<div id="projectModal" class="modal">
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2 id="modal-title">Project Title</h2>
+      <button class="close-btn" onclick="closeModal()">×</button>
+    </div>
+
+    <img id="modal-image" src="" alt="project">
+
+    <p id="modal-desc"></p>
+
+    <h4>Technologies Used:</h4>
+    <div id="modal-tech"></div>
+
+    <div class="modal-buttons">
+      <a id="modal-github" target="_blank" class="btn">GitHub</a>
+      <a id="modal-presentation" target="_blank" class="btn green">Presentation</a>
+    </div>
+
+  </div>
+
+</div>
+
+  
 <script src="js/script.js"></script>
 
 </body>
