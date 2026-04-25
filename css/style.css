@@ -827,23 +827,28 @@ html {
     color: white;
 }
 
-/* LINKS */
-.footer-col ul {
+/* QUICK LINKS GRID (2 columns) */
+.quick-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.quick-grid ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-col ul li {
+.quick-grid li {
     margin-bottom: 8px;
 }
 
-.footer-col ul li a {
+.quick-grid a {
     text-decoration: none;
     color: #cbd5f5;
     transition: 0.3s;
 }
 
-.footer-col ul li a:hover {
+.quick-grid a:hover {
     color: #4f46e5;
 }
 
@@ -867,7 +872,6 @@ html {
     text-align: center;
     font-size: 14px;
 }
-/* respocive */
 @media (max-width: 768px) {
 
     .footer-container {
@@ -875,7 +879,7 @@ html {
         text-align: center;
     }
 
-    .footer-socials {
-        margin-top: 10px;
+    .quick-grid {
+        justify-content: center;
     }
 }
