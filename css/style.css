@@ -711,3 +711,92 @@ html {
 
 }
 
+/* INTEREST SECTION */
+.focus {
+    padding: 80px 20px;
+    text-align: center;
+    background: #f5f7fb;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: #6b7280;
+    margin-bottom: 50px;
+}
+
+/* GRID */
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ITEM */
+.focus-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ROUND ICON */
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    border: 2px solid #e5e7eb;
+
+    font-size: 26px;
+    color: #4f46e5;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* TEXT */
+.focus-item p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* HOVER EFFECT */
+.circle:hover {
+    transform: translateY(-6px) scale(1.05);
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 20px 40px rgba(79, 70, 229, 0.2);
+}
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .circle {
+        width: 65px;
+        height: 65px;
+        font-size: 22px;
+    }
+}
