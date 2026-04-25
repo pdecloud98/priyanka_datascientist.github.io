@@ -567,14 +567,14 @@ html {
 }
 
 /* TAGS */
-.tags {
+.tagsS {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 15px;
 }
 
-.tags span {
+.tagsS span {
     background: #e0e7ff;
     color: #3730a3;
     padding: 5px 10px;
