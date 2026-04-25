@@ -534,7 +534,8 @@ html {
 /* CARD */
 .project-card {
     background: white;
-    border-radius: 12px;
+    /* border-radius: 12px; */
+    border-radius: 18px; /* smoother & modern */
     /* overflow: hidden; */
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
@@ -560,6 +561,8 @@ html {
     width: 100%;
     height: auto;
     display: block;
+       border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 /* .project-image {
     width: 100%;
