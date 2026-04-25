@@ -537,8 +537,13 @@ html {
     /* border-radius: 12px; */
     border-radius: 18px; /* smoother & modern */
     /* overflow: hidden; */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.08); */
+    /* transition: 0.3s; */
+        box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.06),
+        0 20px 40px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
