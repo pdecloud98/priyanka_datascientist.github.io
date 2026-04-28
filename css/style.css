@@ -516,36 +516,35 @@ html {
 }
 
 /* TAGS */
+/* TAG CONTAINER */
 .tagsz {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;   /* center align */
 }
 
+/* TAG ITEM (THIS IS THE MAIN FIX) */
 .tagsz span {
-    padding: 6px 12px;
-    border-radius: 20px;
+    display: inline-block;     /* IMPORTANT */
+    padding: 8px 14px;         /* better size */
+    border-radius: 50px;       /* pill shape */
     font-size: 13px;
     font-weight: 500;
+    white-space: nowrap;       /* prevent breaking */
+    transition: 0.2s ease;
 }
 
-/* COLORS (each box different) */
-.blue span { background: #dbeafe; color: #2563eb; }
-.purple span { background: #ede9fe; color: #7c3aed; }
-.teal span { background: #ccfbf1; color: #0f766e; }
-.orange span { background: #ffedd5; color: #ea580c; }
-.green span { background: #dcfce7; color: #15803d; }
-.pink span { background: #fce7f3; color: #be185d; }
-.cloud-tags span {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-/* HOVER */
+/* HOVER EFFECT (premium feel) */
 .tagsz span:hover {
     transform: translateY(-2px);
-    cursor: default;
 }
+.tagsz.blue span { background: #dbeafe; color: #2563eb; }
+.tagsz.purple span { background: #ede9fe; color: #7c3aed; }
+.tagsz.teal span { background: #ccfbf1; color: #0f766e; }
+.tagsz.orange span { background: #ffedd5; color: #ea580c; }
+.tagsz.pink span { background: #fce7f3; color: #be185d; }
+.tagsz.cloud-tags span { background: #d1fae5; color: #065f46; }
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
