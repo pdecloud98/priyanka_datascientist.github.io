@@ -1428,7 +1428,7 @@ textarea {
   height: 120px;
 }
 
-/* button {
+.contact-btn {
   width: 100%;
   background: #4f46e5;
   color: white;
@@ -1436,11 +1436,11 @@ textarea {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-} */
+}
 
-/* button:hover {
+.contact-btn:hover {
   background: #4338ca;
-} */
+}
 
 /* RESPONSIVE */
 @media(max-width: 768px) {
