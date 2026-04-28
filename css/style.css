@@ -1438,9 +1438,9 @@ textarea {
   cursor: pointer;
 } */
 
-button:hover {
+/* button:hover {
   background: #4338ca;
-}
+} */
 
 /* RESPONSIVE */
 @media(max-width: 768px) {
