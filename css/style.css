@@ -1441,7 +1441,6 @@ textarea {
 .contact-btn:hover {
   background: #4338ca;
 }
-
 /* RESPONSIVE */
 @media(max-width: 768px) {
   .contact-container {
