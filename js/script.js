@@ -133,3 +133,56 @@ document.addEventListener("keydown", function(e) {
         closeModal();
     }
 });
+
+
+
+// Wait until DOM loads (IMPORTANT)
+document.addEventListener("DOMContentLoaded", function () {
+
+  let selectedIndustries = [];
+
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".project-card");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+
+      const value = button.dataset.filter;
+
+      // Toggle active class (UI highlight)
+      button.classList.toggle("active");
+
+      // Add/remove from array
+      if (selectedIndustries.includes(value)) {
+        selectedIndustries = selectedIndustries.filter(item => item !== value);
+      } else {
+        selectedIndustries.push(value);
+      }
+
+      filterProjects();
+    });
+  });
+
+  function filterProjects() {
+
+    cards.forEach(card => {
+
+      const industries = card.dataset.industry.split(" ");
+
+      // If nothing selected → show all
+      if (selectedIndustries.length === 0) {
+        card.style.display = "block";
+        return;
+      }
+
+      // Match ANY selected industry
+      const match = selectedIndustries.some(ind =>
+        industries.includes(ind)
+      );
+
+      card.style.display = match ? "block" : "none";
+    });
+
+  }
+
+});
