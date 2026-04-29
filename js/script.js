@@ -135,8 +135,7 @@ document.addEventListener("keydown", function(e) {
 });
 
 
-
-// Wait until DOM loads (IMPORTANT)
+// js for project selected button
 document.addEventListener("DOMContentLoaded", function () {
 
   let selectedIndustries = [];
@@ -147,9 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
 
-      const value = button.dataset.filter;
+      const value = (button.dataset.filter || "").toLowerCase();
 
-      // Toggle active class (UI highlight)
+      // Toggle active class
       button.classList.toggle("active");
 
       // Add/remove from array
@@ -167,9 +166,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cards.forEach(card => {
 
-      const industries = card.dataset.industry.split(" ");
+      // ✅ SAFE READ (prevents crash)
+      const data = card.dataset.industry;
 
-      // If nothing selected → show all
+      // If no data-industry → show card (or change to "none" if needed)
+      if (!data) {
+        card.style.display = "block";
+        return;
+      }
+
+      const industries = data.toLowerCase().split(" ");
+
+      // If no filter selected → show all
       if (selectedIndustries.length === 0) {
         card.style.display = "block";
         return;
@@ -181,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       card.style.display = match ? "block" : "none";
+
     });
 
   }
