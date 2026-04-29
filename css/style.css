@@ -1455,3 +1455,11 @@ textarea {
   transform: translateY(-5px);
   transition: 0.3s;
 }
+
+/* project button selection  */
+.filter-btn.active {
+  background: linear-gradient(135deg, #6c63ff, #8a84ff);
+  color: white;
+  transform: scale(1.05);
+}
+
