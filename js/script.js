@@ -136,59 +136,116 @@ document.addEventListener("keydown", function(e) {
 
 
 // js for project selected button
+// document.addEventListener("DOMContentLoaded", function () {
+
+//   let selectedIndustries = [];
+
+//   const buttons = document.querySelectorAll(".filter-btn");
+//   const cards = document.querySelectorAll(".project-card");
+
+// buttons.forEach(button => {
+//   button.addEventListener("click", () => {
+
+//     const value = (button.dataset.filter || "").toLowerCase();
+
+//     // 🎯 HANDLE "ALL" BUTTON
+//     if (value === "all") {
+
+//       selectedIndustries = [];
+
+//       // remove active from all buttons
+//       buttons.forEach(btn => btn.classList.remove("active"));
+
+//       // activate only ALL
+//       button.classList.add("active");
+
+//       filterProjects();
+//       return;
+//     }
+
+//     // 🎯 IF ANY OTHER BUTTON CLICKED → REMOVE "ALL"
+//     const allBtn = document.querySelector('[data-filter="all"]');
+//     if (allBtn) allBtn.classList.remove("active");
+
+//     // toggle active class
+//     button.classList.toggle("active");
+
+//     // update selected array
+//     if (selectedIndustries.includes(value)) {
+//       selectedIndustries = selectedIndustries.filter(item => item !== value);
+//     } else {
+//       selectedIndustries.push(value);
+//     }
+
+//     filterProjects();
+//   });
+// });
+
+//   function filterProjects() {
+
+//     cards.forEach(card => {
+
+//       // ✅ SAFE READ (prevents crash)
+//       const data = card.dataset.industry;
+
+//       // If no data-industry → show card (or change to "none" if needed)
+//       if (!data) {
+//         card.style.display = "block";
+//         return;
+//       }
+
+//       const industries = data.toLowerCase().split(" ");
+
+//       // If no filter selected → show all
+//       if (selectedIndustries.length === 0) {
+//         card.style.display = "block";
+//         return;
+//       }
+
+//       // Match ANY selected industry
+//       const match = selectedIndustries.some(ind =>
+//         industries.includes(ind)
+//       );
+
+//       card.style.display = match ? "block" : "none";
+
+//     });
+
+//   }
+
+// });
 document.addEventListener("DOMContentLoaded", function () {
 
-  let selectedIndustries = [];
+  let selectedIndustry = "all"; // default
 
   const buttons = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".project-card");
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
 
-    const value = (button.dataset.filter || "").toLowerCase();
+      const value = (button.dataset.filter || "").toLowerCase();
 
-    // 🎯 HANDLE "ALL" BUTTON
-    if (value === "all") {
-
-      selectedIndustries = [];
-
-      // remove active from all buttons
+      // 🔥 remove active from all buttons
       buttons.forEach(btn => btn.classList.remove("active"));
 
-      // activate only ALL
+      // 🔥 activate clicked button
       button.classList.add("active");
 
+      // set selected industry
+      selectedIndustry = value;
+
       filterProjects();
-      return;
-    }
-
-    // 🎯 IF ANY OTHER BUTTON CLICKED → REMOVE "ALL"
-    const allBtn = document.querySelector('[data-filter="all"]');
-    if (allBtn) allBtn.classList.remove("active");
-
-    // toggle active class
-    button.classList.toggle("active");
-
-    // update selected array
-    if (selectedIndustries.includes(value)) {
-      selectedIndustries = selectedIndustries.filter(item => item !== value);
-    } else {
-      selectedIndustries.push(value);
-    }
-
-    filterProjects();
+    });
   });
-});
 
   function filterProjects() {
 
     cards.forEach(card => {
 
-      // ✅ SAFE READ (prevents crash)
       const data = card.dataset.industry;
 
-      // If no data-industry → show card (or change to "none" if needed)
+      // safety check
       if (!data) {
         card.style.display = "block";
         return;
@@ -196,16 +253,14 @@ buttons.forEach(button => {
 
       const industries = data.toLowerCase().split(" ");
 
-      // If no filter selected → show all
-      if (selectedIndustries.length === 0) {
+      // 🔥 ALL = show everything
+      if (selectedIndustry === "all") {
         card.style.display = "block";
         return;
       }
 
-      // Match ANY selected industry
-      const match = selectedIndustries.some(ind =>
-        industries.includes(ind)
-      );
+      // 🔥 match single selected industry
+      const match = industries.includes(selectedIndustry);
 
       card.style.display = match ? "block" : "none";
 
@@ -214,7 +269,6 @@ buttons.forEach(button => {
   }
 
 });
-
 // autohighlight page index.html
 document.addEventListener("DOMContentLoaded", function () {
 
