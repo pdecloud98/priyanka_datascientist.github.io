@@ -143,24 +143,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".project-card");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
 
-      const value = (button.dataset.filter || "").toLowerCase();
+    const value = (button.dataset.filter || "").toLowerCase();
 
-      // Toggle active class
-      button.classList.toggle("active");
+    // 🎯 HANDLE "ALL" BUTTON
+    if (value === "all") {
 
-      // Add/remove from array
-      if (selectedIndustries.includes(value)) {
-        selectedIndustries = selectedIndustries.filter(item => item !== value);
-      } else {
-        selectedIndustries.push(value);
-      }
+      selectedIndustries = [];
+
+      // remove active from all buttons
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      // activate only ALL
+      button.classList.add("active");
 
       filterProjects();
-    });
+      return;
+    }
+
+    // 🎯 IF ANY OTHER BUTTON CLICKED → REMOVE "ALL"
+    const allBtn = document.querySelector('[data-filter="all"]');
+    if (allBtn) allBtn.classList.remove("active");
+
+    // toggle active class
+    button.classList.toggle("active");
+
+    // update selected array
+    if (selectedIndustries.includes(value)) {
+      selectedIndustries = selectedIndustries.filter(item => item !== value);
+    } else {
+      selectedIndustries.push(value);
+    }
+
+    filterProjects();
   });
+});
 
   function filterProjects() {
 
