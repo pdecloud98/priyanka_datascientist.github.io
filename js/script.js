@@ -221,23 +221,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".project-card");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
+ buttons.forEach(button => {
+  button.addEventListener("click", () => {
 
-      const value = (button.dataset.filter || "").toLowerCase();
+    const value = (button.dataset.filter || "").toLowerCase();
 
-      // 🔥 remove active from all buttons
-      buttons.forEach(btn => btn.classList.remove("active"));
+    // ❌ REMOVE active from ALL buttons
+    buttons.forEach(btn => btn.classList.remove("active"));
 
-      // 🔥 activate clicked button
-      button.classList.add("active");
+    // ✅ ADD active ONLY to clicked button
+    button.classList.add("active");
 
-      // set selected industry
-      selectedIndustry = value;
+    // ✅ SET single selected value
+    selectedIndustry = value;
 
-      filterProjects();
-    });
+    filterProjects();
   });
+});
 
   function filterProjects() {
 
