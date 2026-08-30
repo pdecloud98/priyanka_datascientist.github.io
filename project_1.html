@@ -1,1 +1,469 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My portfolio projects</title>
+<style>
+  :root {
+    --card-bg: #ffffff;
+    --card-border: #e8e6df;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --shadow-rest: 0 10px 24px rgba(0,0,0,0.10), 0 3px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+    --shadow-hover: 0 24px 44px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.6);
+    --purple: #5b3fd6;
+  }
+ 
+  * { box-sizing: border-box; }
+ 
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #eef0f6;
+    margin: 0;
+  }
+ 
+  .site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e6df;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+ 
+  .site-header .brand-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+ 
+  .avatar-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: none;
+    background: #ece9fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d9d4fb;
+  }
+ 
+  .avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+ 
+  .site-header .brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--purple);
+    margin: 0;
+  }
+ 
+  .site-header .brand-title {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 2px 0 0;
+  }
+ 
+  .site-header nav {
+    display: flex;
+    gap: 28px;
+  }
+ 
+  .site-header nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+ 
+  .site-header nav a:hover { color: var(--purple); border-bottom-color: #d9d4fb; }
+ 
+  .site-header nav a.active { color: var(--purple); border-bottom-color: var(--purple); }
+ 
+  .page { max-width: 1120px; margin: 0 auto; padding: 48px 20px 60px; }
+ 
+  .hero { text-align: center; margin-bottom: 36px; }
+ 
+  .hero h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--purple);
+    margin: 0 0 12px;
+  }
+ 
+  .hero p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+ 
+  .role-filter-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+ 
+  .role-pill {
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 22px;
+    border-radius: 999px;
+    background: #e2eefc;
+    color: #1d4fa0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+ 
+  .role-pill:hover { background: #d0e3fa; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(29,79,160,0.15); }
+ 
+  .role-pill.active {
+    background: #1e3a8a;
+    color: #ffffff;
+  }
+ 
+  .filter-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+ 
+  .pill {
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: #e2f5e9;
+    color: #1c7a4f;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+ 
+  .pill:hover { background: #d0eedc; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(28,122,79,0.15); }
+ 
+  .pill.active {
+    background: #14532d;
+    color: #ffffff;
+  }
+ 
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+ 
+  .project-card {
+    display: flex;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-rest);
+    transform: translateY(-2px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.2s ease;
+  }
+ 
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0,0,0,0.12);
+  }
+ 
+  .project-card.hidden { display: none; }
+ 
+  .project-image {
+    width: 400px;
+    min-width: 400px;
+    min-height: 270px;
+    margin: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+  }
+ 
+  .project-content {
+    flex: 1;
+    padding: 22px 26px;
+    min-width: 0;
+  }
+ 
+  .badge-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+ 
+  .badge {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+ 
+  .badge.fmcg      { background: #fbe7e0; color: #7a3418; }
+  .badge.ecommerce { background: #e2eefb; color: #14487c; }
+  .badge.hygiene   { background: #fbe6ef; color: #772245; }
+  .badge.babycare  { background: #ece9fd; color: #322a72; }
+ 
+  .project-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--text-primary);
+  }
+ 
+  .project-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0 0 14px;
+  }
+ 
+  .tag-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+ 
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    padding: 5px 13px;
+    border-radius: 999px;
+    background: #f1efe8;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+ 
+  .tag svg { flex: none; opacity: 0.7; }
+ 
+  .btn-row { display: flex; gap: 10px; }
+ 
+  .btn {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+ 
+  .btn:hover { background: #f6f5f1; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+ 
+  .btn.primary {
+    background: #eef0ff;
+    color: #4338ca;
+    border-color: #d9d4fb;
+  }
+  .btn.primary:hover { background: #e0e4fd; box-shadow: 0 4px 10px rgba(67,56,202,0.18); }
+ 
+  .btn.success {
+    background: #fdf0e0;
+    color: #a15b0a;
+    border-color: #f5ddb8;
+  }
+  .btn.success:hover { background: #fbe6cc; box-shadow: 0 4px 10px rgba(161,91,10,0.18); }
+ 
+  @media (max-width: 700px) {
+    .site-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .project-card { flex-direction: column; }
+    .project-image { width: auto; min-width: 0; min-height: 200px; margin: 14px 14px 0; }
+  }
+</style>
+</head>
+<body>
+ 
+<div class="site-header">
+  <div class="brand-left">
+    <div class="avatar-circle">
+      <!-- Replace this placeholder with your real photo: <img src="your-photo.jpg" alt="Priyanka De"> -->
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5b3fd6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0 -4.4 3.6 -7 8 -7s8 2.6 8 7"></path></svg>
+    </div>
+    <div>
+      <p class="brand-name">Priyanka De</p>
+      <p class="brand-title">Data Analyst &bull; Data Scientist &bull; ML Engineer &bull; Power BI Developer</p>
+    </div>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#" class="active">Projects</a>
+    <a href="#">Resume</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</div>
+ 
+<div class="page">
+ 
+  <div class="hero">
+    <h1>My portfolio projects</h1>
+    <p>Browse through my projects showcasing expertise in data analysis, machine learning, and visualization solutions for real-world problems across various sectors.</p>
+  </div>
+ 
+  <div class="role-filter-block" id="role-filters">
+    <button class="role-pill active" data-role="all">All roles</button>
+    <button class="role-pill" data-role="analyst">Data analyst</button>
+    <button class="role-pill" data-role="scientist">Data scientist</button>
+  </div>
+ 
+  <div class="filter-block" id="domain-filters">
+    <button class="pill active" data-domain="all">All</button>
+    <button class="pill" data-domain="fmcg">FMCG</button>
+    <button class="pill" data-domain="ecommerce">E-commerce</button>
+    <button class="pill" data-domain="real-estate">Real estate</button>
+    <button class="pill" data-domain="healthcare">Healthcare</button>
+    <button class="pill" data-domain="travel">Travel and hospitality</button>
+    <button class="pill" data-domain="media">Media and entertainment</button>
+    <button class="pill" data-domain="telecom">Telecom</button>
+    <button class="pill" data-domain="bfsi">BFSI</button>
+    <button class="pill" data-domain="edtech">EdTech</button>
+    <button class="pill" data-domain="fashion">Fashion</button>
+    <button class="pill" data-domain="automobile">Automobile</button>
+    <button class="pill" data-domain="electronics">Electronics</button>
+  </div>
+ 
+  <div class="project-list" id="project-list">
+ 
+    <div class="project-card" data-domain="fmcg" data-role="analyst">
+      <div class="project-image" style="background:#fbe6ef;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#a13a63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path><path d="M12 6l2 4h4l-2 4h-4l-2 4"></path></svg>
+      </div>
+      <div class="project-content">
+        <div class="badge-row">
+          <span class="badge fmcg">FMCG</span>
+          <span class="badge ecommerce">E-commerce</span>
+          <span class="badge hygiene">Womencare and hygiene</span>
+        </div>
+        <p class="project-title">FMCG market and product performance with sales optimization analysis</p>
+        <p class="project-desc">Built a scalable SQL schema and semantic layer with core entities like customers, transactions, and category performance.</p>
+        <div class="tag-row">
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>SQL</span>
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>Power BI</span>
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>Python</span>
+        </div>
+        <div class="btn-row">
+          <a href="#" class="btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-right:6px;"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>GitHub</a>
+          <a href="#" class="btn primary">Details</a>
+          <a href="#" class="btn success">Presentation</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="project-card" data-domain="fmcg" data-role="analyst">
+      <div class="project-image" style="background:#e2eefb;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1a5a9c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"></circle><circle cx="17" cy="19" r="2"></circle><path d="M17 17h-11v-14h-2"></path><path d="M6 5l14 1l-1 7h-13"></path></svg>
+      </div>
+      <div class="project-content">
+        <div class="badge-row">
+          <span class="badge fmcg">FMCG</span>
+          <span class="badge babycare">Baby care</span>
+        </div>
+        <p class="project-title">Baby care product trend analysis</p>
+        <p class="project-desc">Designed a dashboard tracking sales, supply chain, and marketing performance with visualization tools.</p>
+        <div class="tag-row">
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>Excel</span>
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>Power BI</span>
+        </div>
+        <div class="btn-row">
+          <a href="#" class="btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-right:6px;"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>GitHub</a>
+          <a href="#" class="btn primary">Details</a>
+          <a href="#" class="btn success">Presentation</a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="project-card" data-domain="fmcg" data-role="scientist">
+      <div class="project-image" style="background:#e3f4ec;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#12704f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17h10"></path><rect x="1" y="6" width="15" height="10" rx="2"></rect><path d="M16 9h3l3 3v4h-2"></path><circle cx="7" cy="17" r="2"></circle><circle cx="18" cy="17" r="2"></circle></svg>
+      </div>
+      <div class="project-content">
+        <div class="badge-row">
+          <span class="badge fmcg">FMCG</span>
+        </div>
+        <p class="project-title">Region-wise product supply chain analysis</p>
+        <p class="project-desc">Built a Power BI dashboard analyzing regional supply chain performance, demand forecast, and inventory efficiency.</p>
+        <div class="tag-row">
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>Power BI</span>
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>DAX</span>
+          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>Data modeling</span>
+        </div>
+        <div class="btn-row">
+          <a href="#" class="btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-right:6px;"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>GitHub</a>
+          <a href="#" class="btn primary">Details</a>
+          <a href="#" class="btn success">Presentation</a>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+ 
+</div>
+ 
+<script>
+  var roleButtons = document.querySelectorAll('#role-filters .role-pill');
+  var domainButtons = document.querySelectorAll('#domain-filters .pill');
+  var cards = document.querySelectorAll('.project-card');
+  var currentRole = 'all';
+  var currentDomain = 'all';
+ 
+  function applyFilters() {
+    cards.forEach(function (card) {
+      var roleMatch = currentRole === 'all' || card.getAttribute('data-role') === currentRole;
+      var domainMatch = currentDomain === 'all' || card.getAttribute('data-domain') === currentDomain;
+      card.classList.toggle('hidden', !(roleMatch && domainMatch));
+    });
+  }
+ 
+  roleButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      roleButtons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentRole = btn.getAttribute('data-role');
+      applyFilters();
+    });
+  });
+ 
+  domainButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      domainButtons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentDomain = btn.getAttribute('data-domain');
+      applyFilters();
+    });
+  });
+</script>
+ 
+</body>
+</html>
+ 
