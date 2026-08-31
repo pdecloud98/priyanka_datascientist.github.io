@@ -565,26 +565,34 @@
     /* .project-image { width: auto; min-width: 0; min-height: 150px; margin: 10px 10px 0; border-radius: 10px; } */
     .project-image svg { width: 40px; height: 40px; }
 
-    .project-image {
+   .project-image {
     width: 400px;
+    height: 300px;
     min-width: 400px;
-    min-height: 270px;
+    min-height: 300px;
     margin: 14px;
+    flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 12px;
-    border: 1px solid var(--project-image-border);
-    box-shadow: inset 0 0 0 1px var(--project-image-inset);
-    overflow: hidden;           /* NEW: clip anything that overflows */
-  }
-  
-  .project-image img {
+    overflow: hidden;
+
+    background: transparent;
+}
+
+.project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* NEW: fill the box, crop excess, keep aspect ratio */
-    border-radius: 12px;
-  }
+    max-width: 100%;
+    max-height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
    
     .project-content { min-width: 0; padding: 14px 16px 16px; }
     .project-title { font-size: 15px; }
@@ -729,7 +737,7 @@
       <!-- <div class="project-image" style="background:#fbe6ef;">
         <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#a13a63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path><path d="M12 6l2 4h4l-2 4h-4l-2 4"></path></svg>
       </div> -->
-      <div class="project-image img ">
+      <div class="project-image">
         <img src="images/telecom.png" alt="Pure Petal Data Analytics Project">
       </div>
       <div class="project-content">
