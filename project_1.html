@@ -1,7 +1,11 @@
+
+
+Portfolio page · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My portfolio projects</title>
 <style>
   :root {
@@ -336,6 +340,14 @@
     border-radius: 12px;
     border: 1px solid var(--project-image-border);
     box-shadow: inset 0 0 0 1px var(--project-image-inset);
+    overflow: hidden;
+  }
+ 
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
  
   .project-content {
@@ -562,38 +574,9 @@
     .project-list { gap: 14px; }
  
     .project-card { flex-direction: column; border-radius: 14px; }
-    /* .project-image { width: auto; min-width: 0; min-height: 150px; margin: 10px 10px 0; border-radius: 10px; } */
+    .project-image { width: auto; min-width: 0; min-height: 150px; margin: 10px 10px 0; border-radius: 10px; }
     .project-image svg { width: 40px; height: 40px; }
-
-   .project-image {
-    width: 400px;
-    height: 300px;
-    min-width: 400px;
-    min-height: 300px;
-    margin: 14px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-    overflow: hidden;
-
-    background: transparent;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-}
-   
+ 
     .project-content { min-width: 0; padding: 14px 16px 16px; }
     .project-title { font-size: 15px; }
     .project-desc { font-size: 12.5px; margin-bottom: 10px; }
@@ -644,7 +627,7 @@
 <div class="site-header">
   <div class="brand-left">
     <div class="avatar-circle">
-     <img src="images/ChatGPT Image Apr 22, 2026, 02_42_22 PM.png" alt="Priyanka De">
+      <img src="images/ChatGPT Image Apr 22, 2026, 02_42_22 PM.png" alt="Priyanka De">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5b3fd6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0 -4.4 3.6 -7 8 -7s8 2.6 8 7"></path></svg>
     </div>
     <div>
@@ -654,10 +637,10 @@
   </div>
   <div class="header-right">
     <nav id="site-nav">
-      <a href="index.html">Home</a>
-      <a href="project_1.html" class="active">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+     <a href="index.html">Home</a>
+     <a href="project_1.html.html" class="active">Projects</a>
+     <a href="about.html">About</a>
+     <a href="contact.html">Contact</a>
     </nav>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark / light mode">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
@@ -734,8 +717,8 @@
       <div class="project-list" id="project-list">
  
     <div class="project-card" data-domain="fmcg" data-role="analyst">
-      <div class="project-image" style="background:#fbe6ef;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#a13a63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path><path d="M12 6l2 4h4l-2 4h-4l-2 4"></path></svg>
+      <div class="project-image">
+        <img src="images/telecom.png" alt="FMCG market and product performance with sales optimization analysis">
       </div>
       <div class="project-content">
         <div class="badge-row">
@@ -982,3 +965,6 @@
  
 </body>
 </html>
+ 
+
+
